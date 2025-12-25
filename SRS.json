@@ -1,0 +1,94 @@
+{
+  "project_name": "Smart Pool Management System (PMS)",
+  "version": "1.0.0",
+  "document_type": "Software Requirements Specification (SRS)",
+  "system_overview": {
+    "description": "A comprehensive digital solution for managing pool bookings, user roles, and daily operations with strict slot-based access.",
+    "primary_objective": "To automate slot booking, enforce capacity limits, and monitor real-time attendance."
+  },
+  "functional_requirements": {
+    "admin_module": {
+      "user_management": [
+        "Register and manage Students, Staff, and Coaches",
+        "Role-Based Access Control (RBAC) management",
+        "Ability to block or disable user accounts"
+      ],
+      "calendar_management": {
+        "holiday_management": "Ability to mark specific dates as 'Closed' for maintenance or holidays",
+        "booking_lock": "System must auto-prevent bookings on dates marked as 'Closed'"
+      },
+      "notice_board": {
+        "languages": ["Sinhala", "English"],
+        "display": "Must be visible on the main dashboard for all users",
+        "content": ["Rules", "Emergency Closures", "Competitions"]
+      },
+      "coach_allocation": "Ability to assign one unique coach per day for a 5-day work week"
+    },
+    "booking_system": {
+      "slot_configuration": [
+        {
+          "slot_name": "Morning Slot",
+          "start_time": "08:00",
+          "end_time": "12:00",
+          "duration_hours": 4
+        },
+        {
+          "slot_name": "Afternoon Slot",
+          "start_time": "13:00",
+          "end_time": "17:00",
+          "duration_hours": 4
+        }
+      ],
+      "weekly_policy": {
+        "monday_to_ thursday": "Students Only",
+        "friday": "Staff Only (Special Requirement)",
+        "weekend": "Closed/Maintenance"
+      },
+      "constraints": {
+        "max_capacity_per_slot": 30,
+        "bookings_per_user_per_day": 1,
+        "auto_disable": "Slot must close automatically when capacity reaches 30"
+      },
+      "real_time_tracking": "Display live available space count to users"
+    },
+    "user_roles_and_permissions": {
+      "student": [
+        "Book slots (Mon-Thu)",
+        "View personal booking history",
+        "View Notice Board"
+      ],
+      "staff": [
+        "Book slots (Fri only)",
+        "View personal booking history",
+        "View Notice Board"
+      ],
+      "coach": [
+        "View attendee list for assigned day",
+        "Mark attendance for students/staff",
+        "Identify daily coach on system"
+      ],
+      "admin": [
+        "Full system configuration",
+        "Generate usage and attendance reports",
+        "Manual override for Check-ins"
+      ]
+    }
+  },
+  "operational_requirements": {
+    "attendance_tracking": {
+      "method": "QR Code Scanning",
+      "monitoring": "Real-time Check-in data display",
+      "manual_backup": "Manual check-in feature for administrators"
+    },
+    "reporting_analytics": [
+      "Daily/Monthly usage statistics",
+      "Attendance log reports",
+      "Slot popularity and peak-hour analytics"
+    ]
+  },
+  "non_functional_requirements": {
+    "usability": "Simple booking process (max 3 clicks)",
+    "language_support": "Multi-lingual interface (Sinhala and English)",
+    "security": "Secure login and role-restricted data access"
+  }
+}

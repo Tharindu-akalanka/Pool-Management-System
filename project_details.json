@@ -1,0 +1,152 @@
+{
+    "project_name": "Smart Pool Management System",
+    "version": "1.0.0",
+    "description": "A comprehensive web application for managing university swimming pool bookings, coach schedules, and student attendance using a modern tech stack.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Tharindu-akalanka/Portfolio-rc"
+    },
+    "tech_stack": {
+        "frontend": {
+            "framework": "React 19 (Vite)",
+            "styling": "Tailwind CSS v4",
+            "icons": "Lucide React",
+            "state_management": "Context API (AuthContext)",
+            "routing": "React Router DOM v7",
+            "http_client": "Axios",
+            "qr_code_generation": "react-qr-code",
+            "qr_code_scanning": "html5-qrcode",
+            "image_generation": "html2canvas"
+        },
+        "backend": {
+            "type": "Serverless / Client-Side",
+            "database": "Google Firebase Firestore",
+            "authentication": "Google Firebase Auth"
+        },
+        "cloud_services": {
+            "platform": "Google Firebase",
+            "services": [
+                "Authentication (Email/Password)",
+                "Cloud Firestore (NoSQL Database)"
+            ]
+        }
+    },
+    "folder_structure": {
+        "root": {
+            "description": "Main React Application Directory",
+            "key_directories": [
+                "src/components - Reusable UI components",
+                "src/pages - Route views (Dashboard, Login, Profile, Attendance, etc.)",
+                "src/context - Global state providers",
+                "src/firebase.js - Firebase configuration",
+                "public - Static assets"
+            ],
+            "key_files": [
+                "index.html - Entry HTML",
+                "package.json - Dependencies",
+                "vite.config.js - Vite Configuration",
+                "tailwind.config.js - Tailwind Configuration"
+            ]
+        }
+    },
+    "features": {
+        "authentication": {
+            "login": "Email/Password login with Firebase Auth",
+            "signup": "Registration with automatic 'student' role assignment",
+            "logout": "Secure session termination"
+        },
+        "roles": {
+            "Student": "Can view slots, book sessions, manage profile, and download digital ID.",
+            "Coach/Staff": "Can view daily/weekly bookings, check schedules, and valid attendance.",
+            "Admin": "Full system access (implied)"
+        },
+        "core_modules": {
+            "Dashboard": {
+                "Student View": "View today's slots, active coach status (real-time 8AM-5PM), and system status.",
+                "Coach View": "View detailed booking tables, select dates to view past/future bookings."
+            },
+            "Booking System": {
+                "Capacity Management": "Real-time slot tracking (Max 60).",
+                "Slot Status": "Visual indicators for Active/Closed/Full slots.",
+                "Restrictions": "Logic to restrict bookings (e.g., Friday Staff Only)."
+            },
+            "Profile & ID": {
+                "Digital ID": "Auto-generated ID card with QR code (UID) and Profile Picture.",
+                "Avatar Selection": "Choose from Dicebear avatars.",
+                "Download": "Export ID card as PNG."
+            },
+            "Attendance": {
+                "QR Scanner": "Built-in camera scanner for verifying Student IDs.",
+                "Verification": "Checks if the scanned user has a valid booking for the current day."
+            }
+        }
+    },
+    "database_schema": {
+        "collections": {
+            "users": {
+                "fields": [
+                    "uid",
+                    "name",
+                    "email",
+                    "role",
+                    "studentId",
+                    "photoURL",
+                    "createdAt"
+                ]
+            },
+            "slots": {
+                "fields": [
+                    "id",
+                    "startTime",
+                    "endTime",
+                    "date",
+                    "capacity",
+                    "bookedCount",
+                    "isClosed",
+                    "name"
+                ]
+            },
+            "bookings": {
+                "fields": [
+                    "id",
+                    "userId",
+                    "slotId",
+                    "slotName",
+                    "slotTime",
+                    "date",
+                    "status",
+                    "attended",
+                    "attendedAt"
+                ]
+            }
+        }
+    },
+    "setup_instructions": {
+        "prerequisites": [
+            "Node.js installed",
+            "Firebase Project Credentials"
+        ],
+        "installation": [
+            "npm install"
+        ],
+        "running_locally": {
+            "command": "npm run dev"
+        },
+        "build": {
+            "command": "npm run build"
+        }
+    },
+    "environment_variables": {
+        "client": {
+            "VITE_FIREBASE_API_KEY": "Your Firebase API Key",
+            "VITE_FIREBASE_AUTH_DOMAIN": "project-id.firebaseapp.com",
+            "VITE_FIREBASE_PROJECT_ID": "project-id"
+        }
+    },
+    "contributors": [
+        {
+            "role": "Team Leader",
+            "responsibilities": "Project Architecture, Core Features, GitHub Management"
+        }
+    ]
+}
