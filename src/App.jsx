@@ -22,7 +22,7 @@ const Home = () => <div className="flex flex-col items-center justify-center h-s
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <div className="min-h-screen bg-gray-50">
           {/* Navbar removed in favor of Sidebar Layout for protected routes */}
           <Routes>
