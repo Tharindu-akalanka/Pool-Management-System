@@ -41,8 +41,8 @@ const Sidebar = () => {
             {/* Logo Area */}
             <div className="p-8 border-b border-slate-800/50">
                 <div className="flex items-center gap-3">
-                    <div className="p-2 bg-sky-500/10 rounded-lg">
-                        <LifeBuoy className="w-8 h-8 text-sky-400" />
+                    <div className="w-10 h-10 overflow-hidden rounded-lg bg-white/10 flex items-center justify-center">
+                        <img src="/logo.png" alt="Logo" className="w-full h-full object-contain p-1" />
                     </div>
                     <div>
                         <h1 className="text-xl font-bold font-sans tracking-tight text-white">PoolManager</h1>

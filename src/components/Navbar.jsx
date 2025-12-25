@@ -16,7 +16,10 @@ const Navbar = () => {
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <Link to="/" className="text-xl font-bold text-white">Pool Booking</Link>
+                        <Link to="/" className="flex items-center gap-2 text-xl font-bold text-white">
+                            <img src="/logo.png" alt="Logo" className="h-8 w-8 bg-white rounded-full p-0.5" />
+                            Pool Booking
+                        </Link>
                     </div>
                     <div className="block">
                         <div className="flex items-center ml-10 space-x-4">

@@ -22,6 +22,9 @@ const Login = () => {
     return (
         <div className="flex items-center justify-center h-screen bg-gray-100">
             <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+                <div className="flex justify-center mb-6">
+                    <img src="/logo.png" alt="Logo" className="h-16 w-auto" />
+                </div>
                 <h2 className="mb-6 text-2xl font-bold text-center text-blue-600">Login to PMS</h2>
                 {error && <div className="p-2 mb-4 text-sm text-red-700 bg-red-100 rounded">{error}</div>}
                 <form onSubmit={handleSubmit}>
